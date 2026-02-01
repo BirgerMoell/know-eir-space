@@ -73,53 +73,9 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
             margin-bottom: 2rem;
-        }
-
-        .form-group {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        input[type="email"] {
-            flex: 1;
-            min-width: 200px;
-            padding: 1rem 1.25rem;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            outline: none;
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-        input[type="email"]::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        input[type="email"]:focus {
-            border-color: #60a5fa;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        button {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: #fff;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+            min-height: 120px;
         }
 
         .features {
@@ -158,22 +114,9 @@
             color: #fff;
         }
 
-        .success-message {
-            display: none;
-            padding: 1.5rem;
-            background: rgba(52, 211, 153, 0.1);
-            border: 1px solid rgba(52, 211, 153, 0.3);
+        /* Tally embed overrides */
+        iframe[data-tally-src] {
             border-radius: 8px;
-            color: #34d399;
-            font-weight: 500;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        .form-group.hide {
-            display: none;
         }
 
         @media (max-width: 480px) {
@@ -203,21 +146,16 @@
         </p>
 
         <div class="form-container">
-            <form id="waitlist-form" action="https://tally.so/r/1AVr2b" method="POST">
-                <div class="form-group" id="form-inputs">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Enter your email" 
-                        required
-                        autocomplete="email"
-                    >
-                    <button type="submit">Join Waitlist</button>
-                </div>
-                <div class="success-message" id="success-message">
-                    ✓ You're on the list! We'll be in touch soon.
-                </div>
-            </form>
+            <iframe 
+                data-tally-src="https://tally.so/embed/1AVr2b?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                loading="lazy" 
+                width="100%" 
+                height="100" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="EIR Waitlist">
+            </iframe>
         </div>
 
         <div class="features">
@@ -247,15 +185,7 @@
         </p>
     </div>
 
-    <script>
-        // Simple form handling - replace with Tally embed or keep as redirect
-        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-            // If using Tally embed, remove this script
-            // This is a fallback for simple demo
-            
-            // For Tally: just let the form submit naturally to Tally URL
-            // Or use Tally's embed script instead
-        });
-    </script>
+    <!-- Tally embed script -->
+    <script src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
